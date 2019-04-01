@@ -5,17 +5,14 @@
 </template>
 
 <script>
+import Colors from '../mixins/colors';
+
 export default {
   name: 'ic-vslider-title',
-  props: {
-    color: {
-      type: String,
-      default: '#000000'
-    }
-  },
+  mixins: [Colors],
   computed: {
     titleStyle() {
-      return {borderColor: this.color}
+      return {borderColor: this.colors.primary}
     }
   }
 }
