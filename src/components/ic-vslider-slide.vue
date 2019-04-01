@@ -2,8 +2,8 @@
 export default {
   name: 'IcVsliderSlide',
   functional: true,
-  render(_, { props }) {
-    const { number, title, subtitle } = props;
+  render(_, { children, data }) {
+    const { number, title, subtitle } = data.attrs;
     return (
       <div class="icvs">
         <div class="icvs-headline">
@@ -12,6 +12,7 @@ export default {
             <div class="icvs-headline-text-title">{title}</div>
             <div class="icvs-headline-text-subtitle">{subtitle}</div>
           </div>
+          {children}
         </div>
       </div>
     );

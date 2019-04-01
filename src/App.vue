@@ -16,16 +16,14 @@
             alt="kitty"
           >
         </div>
-        <div slot="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Maecenas tempus, urna sodales condimentum eleifend,
-          metus dui suscipit diam, eget consequat augue libero vel
-          purus. In sed efficitur libero. Aenean scelerisque leo
-          sed dolor hendrerit, id gravida lorem mattis. Etiam
-          laoreet urna sit amet posuere ultricies. Cras hendrerit
-          vel velit at varius. Duis dictum tellus vel erat
-          pellentesque, vel commodo ipsum varius.
-        </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Maecenas tempus, urna sodales condimentum eleifend,
+        metus dui suscipit diam, eget consequat augue libero vel
+        purus. In sed efficitur libero. Aenean scelerisque leo
+        sed dolor hendrerit, id gravida lorem mattis. Etiam
+        laoreet urna sit amet posuere ultricies. Cras hendrerit
+        vel velit at varius. Duis dictum tellus vel erat
+        pellentesque, vel commodo ipsum varius.
       </ic-vslider-slide>
       <ic-vslider-slide
         title="Pomar"
@@ -41,16 +39,14 @@
             allowfullscreen
           />
         </div>
-        <div slot="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Maecenas tempus, urna sodales condimentum eleifend,
-          metus dui suscipit diam, eget consequat augue libero vel
-          purus. In sed efficitur libero. Aenean scelerisque leo
-          sed dolor hendrerit, id gravida lorem mattis. Etiam
-          laoreet urna sit amet posuere ultricies. Cras hendrerit
-          vel velit at varius. Duis dictum tellus vel erat
-          pellentesque, vel commodo ipsum varius.
-        </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Maecenas tempus, urna sodales condimentum eleifend,
+        metus dui suscipit diam, eget consequat augue libero vel
+        purus. In sed efficitur libero. Aenean scelerisque leo
+        sed dolor hendrerit, id gravida lorem mattis. Etiam
+        laoreet urna sit amet posuere ultricies. Cras hendrerit
+        vel velit at varius. Duis dictum tellus vel erat
+        pellentesque, vel commodo ipsum varius.
       </ic-vslider-slide>
     </ic-vslider>
   </div>
