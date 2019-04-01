@@ -16,7 +16,7 @@ export default {
     },
   },
   mounted() {
-    this.emit('icvs-mounted', this.props);
+    this.$emit('icvs-mounted', this.props);
   },
   render() {
     return (
