@@ -2,10 +2,13 @@
   <div id="app">
     <h1>ic-vslider demo</h1>
     <ic-vslider>
-      <ic-vslider-legend>
-        Programas <br>
-        Benefícios
-      </ic-vslider-legend>
+      <template #legend="{number}">
+        <div class="icv-legend-number">{{number}}</div>
+        <div class="icv-legend-text">
+          Programas <br>
+          Benefícios
+        </div>
+      </template>
       <ic-vslider-slide
         title="Pomar"
         subtitle="Horta comunitária"
