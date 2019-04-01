@@ -1,6 +1,13 @@
 <template>
-  <div class="ic-vslider-title" :style="titleStyle">
+  <div
+    class="ic-vslider-title"
+    :style="titleStyle"
+  >
     <slot />
+    <div
+      class="ic-vslider-title-border"
+      :style="borderStyle"
+    />
   </div>
 </template>
 
@@ -8,19 +15,33 @@
 import Colors from '../mixins/colors';
 
 export default {
-  name: 'ic-vslider-title',
+  name: 'IcVsliderTitle',
   mixins: [Colors],
   computed: {
     titleStyle() {
-      return {borderColor: this.colors.primary}
-    }
-  }
-}
+      return { color: this.colors.primary };
+    },
+    borderStyle() {
+      return { backgroundColor: this.colors.accent };
+    },
+  },
+};
 </script>
 
 
-<style scoped>
+<style lang="stylus" scoped>
 .ic-vslider-title {
-
+  display: flex;
+  flex-direction: column;
+}
+.ic-vslider-title /deep/ {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+}
+.ic-vslider-title-border {
+  display: block;
+  height: 3px;
+  width: 30px;
 }
 </style>

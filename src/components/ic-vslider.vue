@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'ic-vslider',
+  name: 'IcVslider',
 };
 </script>
 
