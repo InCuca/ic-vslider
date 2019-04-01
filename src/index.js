@@ -1,28 +1,26 @@
-const version = '__VERSION__'
+const version = '__VERSION__';
 
-const install = Vue => {
+const install = (Vue) => {
   /*
    * NOTE:
    *   if you need to extend Vue contstructor, you can extend it in here.
    */
 
-  Vue.prototype.$add = (a, b) => {
-    return a + b
-  }
+  Vue.prototype.$add = (a, b) => a + b;
 
   /*
    * NOTE:
    *  somthing implementation here ...
    */
-}
+};
 
 const plugin = {
   install,
-  version
-}
+  version,
+};
 
-export default plugin
+export default plugin;
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(plugin)
+  window.Vue.use(plugin);
 }
