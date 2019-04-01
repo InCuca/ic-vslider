@@ -15,10 +15,12 @@
 
 <script>
 import IcVsliderSlide from './ic-vslider-slide';
+import bus from '../bus';
 
 function byComponent(Component) {
-  return vnode => (vnode.fnOptions
-    && vnode.fnOptions.name === Component.name
+  return vnode => (vnode.componentOptions
+    && vnode.componentOptions.Ctor
+    && vnode.componentOptions.Ctor.extendOptions === Component
   );
 }
 
@@ -36,10 +38,21 @@ function getSliderStarter() {
 
 export default {
   name: 'IcVslider',
+  data: () => ({
+    slides: []
+  }),
   computed: {
     totalSlides() {
-      return 14;
+      return this.slides.length
     }
+  },
+  created() {
+    this.slides = this.$slots
+      .default
+      .filter(byComponent(IcVsliderSlide));
+    // bus.$on('icvs-mounted', (vnode) => {
+    //   // this.slides.push(icvs);
+    // });
   }
 };
 </script>

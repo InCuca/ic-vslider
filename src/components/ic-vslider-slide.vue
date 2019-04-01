@@ -1,4 +1,6 @@
 <script>
+import bus from '../bus';
+
 export default {
   name: 'IcVsliderSlide',
   props: {
@@ -16,7 +18,7 @@ export default {
     },
   },
   mounted() {
-    this.$emit('icvs-mounted', this.props);
+    bus.$emit('icvs-mounted', this);
   },
   render() {
     return (
