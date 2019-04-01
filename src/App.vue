@@ -6,7 +6,7 @@
         Programas <br>
         Benefícios
       </ic-vslider-legend>
-      <ic-vslider-slider
+      <ic-vslider-slide
         title="Pomar"
         subtitle="Horta comunitária"
       >
@@ -26,8 +26,8 @@
           vel velit at varius. Duis dictum tellus vel erat
           pellentesque, vel commodo ipsum varius.
         </div>
-      </ic-vslider-slider>
-      <ic-vslider-slider
+      </ic-vslider-slide>
+      <ic-vslider-slide
         title="Pomar"
         subtitle="Horta comunitária"
       >
@@ -51,7 +51,7 @@
           vel velit at varius. Duis dictum tellus vel erat
           pellentesque, vel commodo ipsum varius.
         </div>
-      </ic-vslider-slider>
+      </ic-vslider-slide>
     </ic-vslider>
   </div>
 </template>
