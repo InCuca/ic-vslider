@@ -1,10 +1,12 @@
 <template>
-  <div class="ic-vslider" />
+  <div class="ic-vslider">
+    <slot />
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'IcVSlider',
+  name: 'ic-vslider',
 };
 </script>
 
