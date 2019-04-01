@@ -15,7 +15,7 @@ export default {
       default: '',
     },
   },
-  render(_, ctx) {
+  render() {
     return (
       <div class="icvs">
         <div class="icvs-headline">
