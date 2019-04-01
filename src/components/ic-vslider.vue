@@ -10,6 +10,7 @@ function byComponent(Component) {
 function getSliderStarter() {
   let sliders = 0;
   return (slide) => {
+    console.log(slide);
     const number = String(sliders + 1).padStart(2, '0');
     sliders += 1;
     return {
@@ -21,14 +22,26 @@ function getSliderStarter() {
 
 export default {
   name: 'IcVslider',
-  render() {
-    const sliderStarter = getSliderStarter();
-    this.$slots.default = this.$slots
+  data: () => ({
+    activeSlide: 0,
+    sliders: [],
+  }),
+  watch: {
+    activeSlide: {
+      handler() {
+        this.$slots.default[0].number = 'foo';
+      },
+      immediate: true,
+    },
+  },
+  beforeCreate() {
+    this.sliders = this.$slots
       .default
-      .filter(byComponent(IcVsliderSlide))
-      .map(sliderStarter);
+      .filter(byComponent(IcVsliderSlide));
+  },
+  render() {
     return (
-      <div class="icv">{this.$slots.default}</div>
+      <div class="icv">{this.children}</div>
     );
   },
 };

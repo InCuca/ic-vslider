@@ -1,18 +1,30 @@
 <script>
 export default {
   name: 'IcVsliderSlide',
-  functional: true,
-  render(_, { children, data }) {
-    const { number, title, subtitle } = data.attrs;
+  props: {
+    number: {
+      type: String,
+      default: '',
+    },
+    title: {
+      type: String,
+      default: '',
+    },
+    subtitle: {
+      type: String,
+      default: '',
+    },
+  },
+  render(_, ctx) {
     return (
       <div class="icvs">
         <div class="icvs-headline">
-          <div class="icvs-headline-number">{number}</div>
+          <div class="icvs-headline-number">{this.number}</div>
           <div class="icvs-headline-text">
-            <div class="icvs-headline-text-title">{title}</div>
-            <div class="icvs-headline-text-subtitle">{subtitle}</div>
+            <div class="icvs-headline-text-title">{this.title}</div>
+            <div class="icvs-headline-text-subtitle">{this.subtitle}</div>
           </div>
-          {children}
+          {this.$slots.default}
         </div>
       </div>
     );
