@@ -1,7 +1,14 @@
 <template>
   <div id="app">
     <h1>ic-vslider demo</h1>
-    <ic-vslider title="Muito Além do Trabalho">
+    <ic-vslider>
+      <ic-vslider-title>
+        <h2>Muito Além do Trabalho</h2>
+      </ic-vslider-title>
+      <ic-vslider-legend>
+        Programas <br>
+        Benefícios
+      </ic-vslider-legend>
       <ic-vslider-slider
         title="Pomar"
         subtitle="Horta comunitária"
