@@ -14,25 +14,25 @@
 </template>
 
 <script>
-// import IcVsliderSlide from './ic-vslider-slide';
+import IcVsliderSlide from './ic-vslider-slide';
 
-// function byComponent(Component) {
-//   return vnode => (vnode.fnOptions
-//     && vnode.fnOptions.name === Component.name
-//   );
-// }
+function byComponent(Component) {
+  return vnode => (vnode.fnOptions
+    && vnode.fnOptions.name === Component.name
+  );
+}
 
-// function getSliderStarter() {
-//   let sliders = 0;
-//   return (slide) => {
-//     const number = String(sliders + 1).padStart(2, '0');
-//     sliders += 1;
-//     return {
-//       ...slide,
-//       props: { number },
-//     };
-//   };
-// }
+function getSliderStarter() {
+  let sliders = 0;
+  return (slide) => {
+    const number = String(sliders + 1).padStart(2, '0');
+    sliders += 1;
+    return {
+      ...slide,
+      props: { number },
+    };
+  };
+}
 
 export default {
   name: 'IcVslider',
