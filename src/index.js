@@ -1,4 +1,3 @@
-import IcVsliderTitle from './components/ic-vslider-title';
 import IcVslider from './components/ic-vslider';
 
 
@@ -10,7 +9,6 @@ const install = (Vue) => {
    *   if you need to extend Vue contstructor, you can extend it in here.
    */
 
-  Vue.component(IcVsliderTitle.name, IcVsliderTitle);
   Vue.component(IcVslider.name, IcVslider);
 
   /*
