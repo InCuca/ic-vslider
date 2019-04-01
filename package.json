@@ -11,6 +11,7 @@
     "docs:serve": "vue-cli-service docs --mode serve",
     "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
     "start": "vue-cli-service serve",
+    "test": "npm run test:unit",
     "test:unit": "vue-cli-service test:unit"
   },
   "main": "dist/ic-vslider.common.js",
