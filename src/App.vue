@@ -2,9 +2,6 @@
   <div id="app">
     <h1>ic-vslider demo</h1>
     <ic-vslider>
-      <ic-vslider-title>
-        <h2>Muito Além do Trabalho</h2>
-      </ic-vslider-title>
       <ic-vslider-legend>
         Programas <br>
         Benefícios
@@ -15,7 +12,7 @@
       >
         <div slot="featured">
           <img
-            src="https://placekitten.com/320/320"
+            src="https://placekitten.com/380/380"
             alt="kitty"
           >
         </div>
@@ -60,8 +57,20 @@
 </template>
 
 
-<style>
-#app {
+<style lang="stylus">
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Roboto');
 
+#app {
+  font-family: Exo2;
+  font-size: 16px;
+  font-weight: 300;
+
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    font-family: Exo2;
+  }
 }
 </style>
