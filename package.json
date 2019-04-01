@@ -48,10 +48,16 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/recommended",
       "@vue/airbnb"
     ],
-    "rules": {},
+    "rules": {
+      "import/no-unresolved": "off",
+      "import/extensions": "off",
+      "import/prefer-default-export": "off",
+      "no-param-reassign": "off",
+      "one-var-declaration-per-line": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
