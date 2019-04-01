@@ -10,7 +10,7 @@ module.exports = {
     }
   },
   themeConfig: {
-    repo: '/ic-vslider',
+    repo: 'InCuca/ic-vslider',
     docsDir: 'docs',
     locales: {
       '/': {
