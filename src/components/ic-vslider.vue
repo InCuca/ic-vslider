@@ -13,7 +13,10 @@
         </div>
       </slot>
     </div>
-    <swiper :options="swiperOptions" ref="swiperCmp">
+    <swiper
+      ref="swiperCmp"
+      :options="swiperOptions"
+    >
       <slot />
     </swiper>
     <div
@@ -36,35 +39,27 @@
 </template>
 
 <script>
-import 'swiper/dist/css/swiper.css'
-import { swiper } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css';
+import { swiper } from 'vue-awesome-swiper';
 import bus from '../bus';
 import colors from '../mixins/colors';
 
 export default {
   name: 'IcVslider',
-  components: {swiper, swiperSlide},
+  components: { swiper },
   mixins: [colors],
   data: () => ({
     slides: {},
     hoveredCtrl: null,
   }),
-  watch: {
-    slides: {
-      handler: function() {
-        this.restartSlider();
-      },
-      immediate: true,
-    }
-  },
   computed: {
-    swiper(){
+    swiper() {
       return this.$refs.swiperCmp.swiper;
     },
     swiperOptions() {
       return {
 
-      }
+      };
     },
     visibleSlide() {
       return Object.values(this.slides)
@@ -79,6 +74,14 @@ export default {
           ? this.colors.accent
           : this.colors.primary,
       });
+    },
+  },
+  watch: {
+    slides: {
+      handler() {
+        this.restartSlider();
+      },
+      immediate: true,
     },
   },
   created() {

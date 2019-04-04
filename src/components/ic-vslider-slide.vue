@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import {swiperSlide} from 'vue-awesome-swiper';
+import { swiperSlide } from 'vue-awesome-swiper';
 import bus from '../bus';
 
 export default {
