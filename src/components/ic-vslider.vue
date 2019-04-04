@@ -79,20 +79,22 @@ export default {
   watch: {
     slides: {
       handler() {
-        // this.restartSlider();
+        if (this.swipCmp) {
+          this.swiperCmp.update();
+        }
       },
       immediate: true,
     },
   },
   created() {
-    // bus.$on('icvs-mounted', (icvs) => {
-    //   const slideNumber = this.totalSlides + 1;
-    //   icvs.setNumber(this.getNumberPad(slideNumber));
-    //   this.slides = {
-    //     ...this.slides,
-    //     [icvs.number]: icvs,
-    //   };
-    // });
+    bus.$on('icvs-mounted', (icvs) => {
+      const slideNumber = this.totalSlides + 1;
+      icvs.setNumber(this.getNumberPad(slideNumber));
+      this.slides = {
+        ...this.slides,
+        [icvs.number]: icvs,
+      };
+    });
   },
   methods: {
     onControlClick() {
