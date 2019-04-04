@@ -174,7 +174,7 @@ export default {
 
 .icv-controls {
   position: absolute;
-  top: 0;
+  top: calc(50% - 60px);
   right: 0;
   bottom: 0;
   z-index: 1;
