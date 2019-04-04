@@ -2,13 +2,13 @@
   <div class="icvs">
     <template v-if="visible">
       <div class="icvs-headline">
-        <div class="icvs-headline-number">{this.number}</div>
+        <div class="icvs-headline-number">{{number}}</div>
         <div class="icvs-headline-text">
-          <div class="icvs-headline-text-title">{this.title}</div>
-          <div class="icvs-headline-text-subtitle">{this.subtitle}</div>
+          <div class="icvs-headline-text-title">{{title}}</div>
+          <div class="icvs-headline-text-subtitle">{{subtitle}}</div>
         </div>
       </div>
-      <div class="icvs-content">{this.$slots.default}</div>
+      <div class="icvs-content"><slot /></div>
     </template>
   </div>
 </template>
