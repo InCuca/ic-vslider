@@ -31,8 +31,8 @@
         pellentesque, vel commodo ipsum varius.
       </ic-vslider-slide>
       <ic-vslider-slide
-        title="Pomar"
-        subtitle="Horta comunitária"
+        title="Futebol"
+        subtitle="Futebol no campo"
       >
         <div slot="featured">
           <iframe
@@ -44,14 +44,12 @@
             allowfullscreen
           />
         </div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Maecenas tempus, urna sodales condimentum eleifend,
-        metus dui suscipit diam, eget consequat augue libero vel
-        purus. In sed efficitur libero. Aenean scelerisque leo
-        sed dolor hendrerit, id gravida lorem mattis. Etiam
-        laoreet urna sit amet posuere ultricies. Cras hendrerit
-        vel velit at varius. Duis dictum tellus vel erat
-        pellentesque, vel commodo ipsum varius.
+        Maecenas nec consectetur ante. Donec mattis lorem fringilla
+        massa dapibus auctor. Nulla posuere maximus orci, eget mollis
+        sapien scelerisque quis. Vestibulum id tristique enim.
+        Donec vel sodales justo. Praesent pretium venenatis quam,
+        in pulvinar quam volutpat nec. Nunc quis lacus enim.
+        In rhoncus sem eu elit maximus, nec ultricies eros ultricies.
       </ic-vslider-slide>
     </ic-vslider>
   </div>
