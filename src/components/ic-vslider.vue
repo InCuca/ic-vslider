@@ -121,6 +121,25 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.icv {
+  position: relative;
+}
+
+.icv-legend {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1em;
+
+  .icv-legend-text {
+    transform: rotate(-90deg) translate(-2em);
+    transform-origin: top left;
+  }
+}
+
 .icv-controls-ctrl {
   display: flex;
   align-items: center;
