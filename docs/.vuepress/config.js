@@ -1,3 +1,5 @@
+const { sidebarTree } = require('../code/config');
+
 module.exports = {
   plugins: [
     require('./plugin.js')
@@ -11,10 +13,17 @@ module.exports = {
   },
   themeConfig: {
     repo: 'InCuca/ic-vslider',
-    docsDir: 'docs',
-    nav: [{
-      text: 'Release Notes',
-      link: 'https://github.com//ic-vslider/releases'
-    }],
+    editLinks: true,
+    sidebarDepth: 4,
+    docsDir: 'code',
+    locales: {
+      '/': {
+        nav: [{
+          text: 'Release Notes',
+          link: 'https://github.com//ic-vslider/releases'
+        }],
+        sidebar: Object.assign({}, sidebarTree())
+      }
+    }
   }
 }

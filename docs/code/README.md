@@ -1,6 +1,6 @@
 # ic-vslider
 
-Demo and docs: [https://incuca.github.io/ic-vslider/](https://incuca.github.io/ic-vslider/)
+Demo and docs: https://incuca.github.io/ic-vslider/
 
 ## Installation
 
