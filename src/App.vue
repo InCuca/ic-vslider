@@ -55,6 +55,8 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2|Roboto');
 
 #app {
+  margin: 0 auto;
+  max-width: 1000px;
   font-family: Roboto;
   font-size: 16px;
   font-weight: 300;

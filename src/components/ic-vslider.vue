@@ -140,6 +140,8 @@ export default {
 <style lang="stylus" scoped>
 .icv {
   position: relative;
+  padding-right: 60px;
+  padding-bottom: 8em;
 }
 
 .icv-legend {
@@ -159,6 +161,9 @@ export default {
   }
 
   .icv-legend-text {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
     font-size: .625em;
     font-weight: 900;
     letter-spacing: 3.2px;
@@ -168,40 +173,49 @@ export default {
   }
 }
 
-.icv-controls-ctrl {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
+.icv-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 
-  .icv-controls-ctrl-arrow {
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0 3px 3px 0;
-    display: block;
-    padding: 3px;
-  }
+  .icv-controls-ctrl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 
-  &--right .icv-controls-ctrl-arrow {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-  }
+    .icv-controls-ctrl-arrow {
+      border-color: inherit;
+      border-style: solid;
+      border-width: 0 3px 3px 0;
+      display: block;
+      padding: 3px;
+    }
 
-  &--left .icv-controls-ctrl-arrow {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-  }
+    &--right .icv-controls-ctrl-arrow {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
 
-  &--up .icv-controls-ctrl-arrow {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-  }
+    &--left .icv-controls-ctrl-arrow {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
 
-  &--down .icv-controls-ctrl-arrow {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+    &--up .icv-controls-ctrl-arrow {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+
+    &--down .icv-controls-ctrl-arrow {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
   }
 }
+
 </style>
