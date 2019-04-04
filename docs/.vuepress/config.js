@@ -1,6 +1,7 @@
 const { sidebarTree } = require('../code/config');
 
 module.exports = {
+  base: '/ic-vslider/',
   plugins: [
     require('./plugin.js')
   ],
