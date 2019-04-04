@@ -102,11 +102,11 @@ export default {
       return String(number).padStart(2, '0');
     },
     onControlClick() {
-      // if (this.hoveredCtrl === 'down') {
-      //   this.nextSlide();
-      // } else {
-      //   this.prevSlide();
-      // }
+      if (this.hoveredCtrl === 'down') {
+        this.swiper.slideNext();
+      } else {
+        this.swiper.slidePrev();
+      }
     },
   },
 };
