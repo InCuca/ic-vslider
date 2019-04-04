@@ -1,5 +1,8 @@
 <template>
   <swiper-slide class="icvs">
+    <div class="icvs-featured">
+      <slot name="featured" />
+    </div>
     <div class="icvs-headline">
       <div class="icvs-headline-number">
         {{ number }}
@@ -53,3 +56,9 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus" scoped>
+.icvs {
+  display: flex;
+}
+</style>
