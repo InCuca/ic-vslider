@@ -97,6 +97,9 @@ export default {
     });
   },
   methods: {
+    getNumberPad(number) {
+      return String(number).padStart(2, '0');
+    },
     onControlClick() {
       // if (this.hoveredCtrl === 'down') {
       //   this.nextSlide();
