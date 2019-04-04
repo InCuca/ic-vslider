@@ -10,8 +10,8 @@
     </div>
     <slot />
     <div class="icv-controls">
-      <i class="icv-controls-arrow icv-controls-arrow--up "></i>
-      <i class="icv-controls-arrow icv-controls-arrow--down "></i>
+      <i class="icv-controls-arrow icv-controls-arrow--up"></i>
+      <i class="icv-controls-arrow icv-controls-arrow--down"></i>
     </div>
   </div>
 </template>
@@ -19,10 +19,11 @@
 <script>
 import IcVsliderSlide from './ic-vslider-slide';
 import bus from '../bus';
-import { setInterval } from 'timers';
+import colors from '../mixins/colors';
 
 export default {
   name: 'IcVslider',
+  mixins: [colors],
   data: () => ({
     slides: {}
   }),
@@ -43,8 +44,8 @@ export default {
       const visibleSlide = this.visibleSlide;
       let curIdx = 0;
       if (visibleSlide) {
-        curIdx = numbers.findIndex(curSlide.number) + 1;
-        visibleSlide.setVisible(false);
+        curIdx = numbers.findIndex(visibleSlide.number) + 1;
+        visibleSlide.setVisible(false)
       }
 
       const nextSlideNumber = numbers[curIdx];
