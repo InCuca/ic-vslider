@@ -75,6 +75,7 @@ export default {
       return {
         direction: 'vertical',
         autoHeight: true,
+        effect: 'coverflow',
         ...this.options,
       };
     },

@@ -66,6 +66,7 @@ export default {
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    justify-content: space-around;
   }
 
   .icvs-featured {
@@ -74,11 +75,24 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+      max-width: 40%;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
   }
 
   .icvs-r {
     display: flex;
     flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+      max-width: calc(60% - 100px);
+      margin-left: 100px;
+      margin-right: 0;
+    }
   }
 }
 </style>
