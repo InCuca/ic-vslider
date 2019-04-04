@@ -23,6 +23,9 @@ export default {
     slides: {}
   }),
   computed: {
+    // currentSlide() {
+    //   return Object.values(this.slides).find(slide => slide.active)
+    // },
     totalSlides() {
       return Object.keys(this.slides).length
     }

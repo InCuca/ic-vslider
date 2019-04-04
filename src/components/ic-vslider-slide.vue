@@ -1,3 +1,18 @@
+<template>
+  <div class="icvs">
+    <template v-if="visible">
+      <div class="icvs-headline">
+        <div class="icvs-headline-number">{this.number}</div>
+        <div class="icvs-headline-text">
+          <div class="icvs-headline-text-title">{this.title}</div>
+          <div class="icvs-headline-text-subtitle">{this.subtitle}</div>
+        </div>
+      </div>
+      <div class="icvs-content">{this.$slots.default}</div>
+    </template>
+  </div>
+</template>
+
 <script>
 import bus from '../bus';
 
@@ -27,22 +42,6 @@ export default {
   },
   mounted() {
     bus.$emit('icvs-mounted', this);
-  },
-  render() {
-    return (
-      <div class="icvs">
-        <template v-if="visible">
-          <div class="icvs-headline">
-            <div class="icvs-headline-number">{this.number}</div>
-            <div class="icvs-headline-text">
-              <div class="icvs-headline-text-title">{this.title}</div>
-              <div class="icvs-headline-text-subtitle">{this.subtitle}</div>
-            </div>
-          </div>
-          <div class="icvs-content">{this.$slots.default}</div>
-        </template>
-      </div>
-    );
   },
 };
 </script>
