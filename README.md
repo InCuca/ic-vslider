@@ -1,5 +1,7 @@
 # ic-vslider
 
+Demo and docs: https://incuca.github.io/ic-vslider/
+
 ## Project setup
 ```
 npm install
