@@ -154,13 +154,15 @@ export default {
   .icv-legend-number {
     font-size: 3.75em;
     font-weight: bold;
+    border-bottom: 3px solid;
+    line-height: 1;
   }
 
   .icv-legend-text {
     font-size: .625em;
     font-weight: 900;
     letter-spacing: 3.2px;
-    transform: rotate(-90deg) translateX(-4.5em) translateY(1em);
+    transform: rotate(-90deg) translateX(-3.5em) translateY(1em);
     transform-origin: top left;
     text-transform: uppercase;
   }
