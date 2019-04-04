@@ -66,7 +66,10 @@
 
   .icv-legend-number {
     font-family: Exo2;
-    font-weight: bold;
+  }
+
+  .icv-legend-text {
+    color: #cccccc;
   }
 }
 </style>
