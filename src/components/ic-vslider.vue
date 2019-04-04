@@ -24,6 +24,7 @@
           :class="['icv-controls-ctrl', `icv-controls-ctrl--${dir}`]"
           :style="controlStyle(dir)"
           @mouseenter="hoveredCtrl = dir"
+          @click="onControlClick"
         >
           <i class="icv-controls-ctrl-arrow" />
         </div>
@@ -43,6 +44,14 @@ export default {
     slides: {},
     hoveredCtrl: null,
   }),
+  watch: {
+    slides: {
+      handler: function() {
+        this.restartSlider();
+      },
+      immediate: true,
+    }
+  },
   computed: {
     visibleSlide() {
       return Object.values(this.slides)
@@ -69,10 +78,10 @@ export default {
       };
     });
   },
-  updated() {
-    this.restartSlider();
-  },
   methods: {
+    prevSlide() {
+
+    },
     nextSlide() {
       const numbers = Object.keys(this.slides);
       if (numbers.length < 1) return;
@@ -94,6 +103,13 @@ export default {
     getNumberPad(number) {
       return String(number).padStart(2, '0');
     },
+    onControlClick() {
+      if (this.hoveredCtrl === 'down') {
+        this.nextSlide();
+      } else {
+        this.prevSlide();
+      }
+    }
   },
 };
 </script>
