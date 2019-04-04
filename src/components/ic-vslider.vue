@@ -94,6 +94,15 @@ export default {
       };
     });
   },
+  methods: {
+    onControlClick() {
+      // if (this.hoveredCtrl === 'down') {
+      //   this.nextSlide();
+      // } else {
+      //   this.prevSlide();
+      // }
+    },
+  },
 };
 </script>
 
