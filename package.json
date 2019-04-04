@@ -9,7 +9,7 @@
     "docs:jsdoc": "vuepress-jsdoc --dist ./docs --readme ./README.md --rmPattern=./docs/code/README.md --exclude App.vue,main.js,plugin.js",
     "docs:build": "npm run docs:jsdoc && vue-cli-service docs --mode build",
     "docs:serve": "npm run docs:jsdoc && vue-cli-service docs --mode serve",
-    "deploy": "./deploy.sh",
+    "deploy": "npm run docs:build && ./deploy.sh",
     "prepublish": "npm run deploy && vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
     "start": "vue-cli-service serve",
     "test": "npm run test:unit",
