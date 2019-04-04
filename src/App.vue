@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>ic-vslider demo</h1>
     <ic-vslider>
       <template #legend-text>
         Programas <br>
@@ -59,11 +58,6 @@
   font-size: 16px;
   font-weight: 300;
 
-  h1 {
-    font-size: 28px;
-  }
-
-  h1,
   .icv-legend-number,
   .icvs-r-headline {
     font-family: Exo2;
