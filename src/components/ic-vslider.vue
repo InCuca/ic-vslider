@@ -1,11 +1,17 @@
 <template>
-  <div class="icv" :style="icvStyle">
+  <div
+    class="icv"
+    :style="icvStyle"
+  >
     <div class="icv-legend">
       <slot
         name="legend"
         :number="totalSlides"
       >
-        <div class="icv-legend-number" :style="legendNumberStyle">
+        <div
+          class="icv-legend-number"
+          :style="legendNumberStyle"
+        >
           {{ totalSlides }}
         </div>
         <div class="icv-legend-text">
@@ -52,8 +58,8 @@ export default {
   props: {
     options: {
       type: Object,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   data: () => ({
     slides: {},
@@ -78,7 +84,7 @@ export default {
       return Object.keys(this.slides).length;
     },
     icvStyle() {
-      return {color: this.colors.text};
+      return { color: this.colors.text };
     },
     controlStyle() {
       return dir => ({
