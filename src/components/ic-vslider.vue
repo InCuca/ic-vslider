@@ -3,6 +3,31 @@
     class="icv"
     :style="icvStyle"
   >
+    <div class="icv-c">
+      <swiper
+        ref="swiperCmp"
+        :options="swiperOptions"
+        v-on="$listeners"
+      >
+        <slot />
+      </swiper>
+      <div
+        class="icv-controls"
+        @mouseleave="hoveredCtrl = null"
+      >
+        <template v-for="dir in ['up', 'down']">
+          <div
+            :key="dir"
+            :class="['icv-controls-ctrl', `icv-controls-ctrl--${dir}`]"
+            :style="controlStyle(dir)"
+            @mouseenter="hoveredCtrl = dir"
+            @click="onControlClick"
+          >
+            <i class="icv-controls-ctrl-arrow" />
+          </div>
+        </template>
+      </div>
+    </div>
     <div class="icv-legend">
       <div
         class="icv-legend-number"
@@ -20,29 +45,6 @@
           Total
         </slot>
       </div>
-    </div>
-    <swiper
-      ref="swiperCmp"
-      :options="swiperOptions"
-      v-on="$listeners"
-    >
-      <slot />
-    </swiper>
-    <div
-      class="icv-controls"
-      @mouseleave="hoveredCtrl = null"
-    >
-      <template v-for="dir in ['up', 'down']">
-        <div
-          :key="dir"
-          :class="['icv-controls-ctrl', `icv-controls-ctrl--${dir}`]"
-          :style="controlStyle(dir)"
-          @mouseenter="hoveredCtrl = dir"
-          @click="onControlClick"
-        >
-          <i class="icv-controls-ctrl-arrow" />
-        </div>
-      </template>
     </div>
   </div>
 </template>
@@ -141,17 +143,24 @@ export default {
 <style lang="stylus" scoped>
 .icv {
   position: relative;
-  padding-right: 60px;
+
+  .icv-c {
+    padding-right: 60px;
+  }
 }
 
 .icv-legend {
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
-  display: flex;
+  right: -60px;
   align-items: flex-end;
   line-height: 1em;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 
   .icv-legend-number {
     font-size: 3.75em;
@@ -161,9 +170,9 @@ export default {
   }
 
   .icv-legend-text {
-    position: absolute;
-    bottom: 0;
-    left: 100%;
+    // position: absolute;
+    // bottom: 0;
+    // left: 100%;
     font-size: .625em;
     font-weight: 900;
     letter-spacing: 3.2px;
