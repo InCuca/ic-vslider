@@ -5,6 +5,7 @@ export default {
   name: 'IcVsliderSlide',
   data: () => ({
     number: '',
+    visible: false,
   }),
   props: {
     title: {
@@ -19,6 +20,9 @@ export default {
   methods: {
     setNumber(number) {
       this.number = number
+    },
+    setVisible(visible) {
+      this.visible = visible
     }
   },
   mounted() {
@@ -27,14 +31,16 @@ export default {
   render() {
     return (
       <div class="icvs">
-        <div class="icvs-headline">
-          <div class="icvs-headline-number">{this.number}</div>
-          <div class="icvs-headline-text">
-            <div class="icvs-headline-text-title">{this.title}</div>
-            <div class="icvs-headline-text-subtitle">{this.subtitle}</div>
+        <template v-if="visible">
+          <div class="icvs-headline">
+            <div class="icvs-headline-number">{this.number}</div>
+            <div class="icvs-headline-text">
+              <div class="icvs-headline-text-title">{this.title}</div>
+              <div class="icvs-headline-text-subtitle">{this.subtitle}</div>
+            </div>
           </div>
-          {this.$slots.default}
-        </div>
+          <div class="icvs-content">{this.$slots.default}</div>
+        </template>
       </div>
     );
   },
