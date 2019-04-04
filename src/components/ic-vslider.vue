@@ -16,6 +16,7 @@
     <swiper
       ref="swiperCmp"
       :options="swiperOptions"
+      v-on="$listeners"
     >
       <slot />
     </swiper>
