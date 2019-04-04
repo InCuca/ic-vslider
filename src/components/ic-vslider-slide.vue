@@ -3,11 +3,10 @@ import bus from '../bus';
 
 export default {
   name: 'IcVsliderSlide',
+  data: () => ({
+    number: '',
+  }),
   props: {
-    number: {
-      type: String,
-      default: '',
-    },
     title: {
       type: String,
       default: '',
@@ -16,6 +15,11 @@ export default {
       type: String,
       default: '',
     },
+  },
+  methods: {
+    setNumber(number) {
+      this.number = number
+    }
   },
   mounted() {
     bus.$emit('icvs-mounted', this);

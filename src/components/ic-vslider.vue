@@ -17,31 +17,24 @@
 import IcVsliderSlide from './ic-vslider-slide';
 import bus from '../bus';
 
-function getSliderStarter() {
-  let sliders = 0;
-  return (slide) => {
-    const number = String(sliders + 1).padStart(2, '0');
-    sliders += 1;
-    return {
-      ...slide,
-      props: { number },
-    };
-  };
-}
-
 export default {
   name: 'IcVslider',
   data: () => ({
-    slides: []
+    slides: {}
   }),
   computed: {
     totalSlides() {
-      return this.slides.length
+      return Object.keys(this.slides).length
     }
   },
   created() {
     bus.$on('icvs-mounted', (icvs) => {
-      this.slides.push(icvs);
+      const slideNumber = this.totalSlides + 1;
+      icvs.setNumber(String(slideNumber).padStart(2, '0'));
+      this.slides = {
+        ...this.slides,
+        [icvs.number]: icvs
+      };
     });
   }
 };
