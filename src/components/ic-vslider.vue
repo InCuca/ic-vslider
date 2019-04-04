@@ -89,7 +89,7 @@ export default {
       const { visibleSlide } = this;
       let curIdx = 0;
       if (visibleSlide) {
-        curIdx = numbers.findIndex(visibleSlide.number) + 1;
+        curIdx = numbers.findIndex(n => n === visibleSlide.number) + 1;
         visibleSlide.setVisible(false);
       }
 
