@@ -7,8 +7,11 @@
           Total
         </div>
       </slot>
-
-      <slot />
+    </div>
+    <slot />
+    <div class="icv-controls">
+      <div class="icv-controls-arrow icv-controls-arrow--up "></div>
+      <div class="icv-controls-arrow icv-controls-arrow--down "></div>
     </div>
   </div>
 </template>
