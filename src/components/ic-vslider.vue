@@ -115,7 +115,7 @@ export default {
       immediate: true,
     },
   },
-  created() {
+  mounted() {
     bus.$on('icvs-mounted', (icvs) => {
       const slideNumber = this.totalSlides + 1;
       icvs.setNumber(this.getNumberPad(slideNumber));
