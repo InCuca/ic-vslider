@@ -23,9 +23,10 @@ export default {
     slides: {}
   }),
   computed: {
-    // currentSlide() {
-    //   return Object.values(this.slides).find(slide => slide.active)
-    // },
+    visibleSlide() {
+      return Object.values(this.slides)
+        .find(slide => slide.visible)
+    },
     totalSlides() {
       return Object.keys(this.slides).length
     }
