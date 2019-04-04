@@ -1,6 +1,9 @@
-import App from '../../src/App';
-import '../../src//plugin';
+export default async ({Vue, isServer}) => {
 
-export default ({Vue}) => {
-  Vue.component('Demo', App);
+  if (!isServer) {
+    const plugin = (await import('../../src/index')).default;
+    const App = (await import('../../src/App')).default;
+    Vue.use(plugin);
+    Vue.component('Demo', App);
+  }
 }
