@@ -10,9 +10,9 @@
       >
         <slot
           name="legend-number"
-          :number="totalSlides"
+          :number="getNumberPad(totalSlides)"
         >
-          {{ totalSlides }}
+          {{ getNumberPad(totalSlides) }}
         </slot>
       </div>
       <div class="icv-legend-text">
