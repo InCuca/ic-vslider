@@ -108,6 +108,11 @@ export default {
       margin-right: 0;
     }
 
+    .icvs-r-headline,
+    .icvs-r-content {
+      margin: 1em 0;
+    }
+
     .icvs-r-headline {
       display: flex;
       text-transform: uppercase;
@@ -135,7 +140,7 @@ export default {
     }
 
     .icvs-r-content {
-      margin: 1em 0;
+      margin-top: 0;
     }
   }
 }
