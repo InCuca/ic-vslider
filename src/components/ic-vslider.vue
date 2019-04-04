@@ -17,13 +17,6 @@
 import IcVsliderSlide from './ic-vslider-slide';
 import bus from '../bus';
 
-function byComponent(Component) {
-  return vnode => (vnode.componentOptions
-    && vnode.componentOptions.Ctor
-    && vnode.componentOptions.Ctor.extendOptions === Component
-  );
-}
-
 function getSliderStarter() {
   let sliders = 0;
   return (slide) => {
@@ -47,12 +40,9 @@ export default {
     }
   },
   created() {
-    this.slides = this.$slots
-      .default
-      .filter(byComponent(IcVsliderSlide));
-    // bus.$on('icvs-mounted', (vnode) => {
-    //   // this.slides.push(icvs);
-    // });
+    bus.$on('icvs-mounted', (icvs) => {
+      this.slides.push(icvs);
+    });
   }
 };
 </script>
