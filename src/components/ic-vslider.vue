@@ -14,9 +14,20 @@
       </slot>
     </div>
     <slot />
-    <div class="icv-controls">
-      <i class="icv-controls-arrow icv-controls-arrow--up" />
-      <i class="icv-controls-arrow icv-controls-arrow--down" />
+    <div
+      class="icv-controls"
+      @mouseleave="hoveredCtrl = null"
+    >
+      <template v-for="dir in ['up', 'down']">
+        <div
+          :key="dir"
+          :class="['icv-controls-ctrl', `icv-controls-ctrl--${dir}`]"
+          :style="controlStyle(dir)"
+          @mouseenter="hoveredCtrl = dir"
+        >
+          <i class="icv-controls-ctrl-arrow" />
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -30,6 +41,7 @@ export default {
   mixins: [colors],
   data: () => ({
     slides: {},
+    hoveredCtrl: null,
   }),
   computed: {
     visibleSlide() {
@@ -38,6 +50,13 @@ export default {
     },
     totalSlides() {
       return Object.keys(this.slides).length;
+    },
+    controlStyle() {
+      return dir => ({
+        borderColor: this.hoveredCtrl === dir
+          ? this.colors.accent
+          : this.colors.primary,
+      });
     },
   },
   created() {
@@ -80,28 +99,38 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.icv-controls-arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
+.icv-controls-ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 
-  &--right {
+  .icv-controls-ctrl-arrow {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0 3px 3px 0;
+    display: block;
+    padding: 3px;
+  }
+
+  &--right .icv-controls-ctrl-arrow {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
   }
 
-  &--left {
+  &--left .icv-controls-ctrl-arrow {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }
 
-  &--up {
+  &--up .icv-controls-ctrl-arrow {
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
   }
 
-  &--down {
+  &--down .icv-controls-ctrl-arrow {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
   }
