@@ -10,12 +10,11 @@
         title="Pomar"
         subtitle="Horta comunitária"
       >
-        <div slot="featured">
-          <img
-            src="https://placekitten.com/380/380"
-            alt="kitty"
-          >
-        </div>
+        <img
+          slot="featured"
+          src="https://placekitten.com/380/380"
+          alt="kitty"
+        >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Maecenas tempus, urna sodales condimentum eleifend,
         metus dui suscipit diam, eget consequat augue libero vel
@@ -29,16 +28,15 @@
         title="Futebol"
         subtitle="Futebol no campo"
       >
-        <div slot="featured">
-          <iframe
-            width="610"
-            height="343"
-            src="https://www.youtube.com/embed/k4mJkt1y7E8"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          />
-        </div>
+        <iframe
+          slot="featured"
+          width="610"
+          height="343"
+          src="https://www.youtube.com/embed/k4mJkt1y7E8"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
         Maecenas nec consectetur ante. Donec mattis lorem fringilla
         massa dapibus auctor. Nulla posuere maximus orci, eget mollis
         sapien scelerisque quis. Vestibulum id tristique enim.

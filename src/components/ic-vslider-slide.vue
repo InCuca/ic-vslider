@@ -3,21 +3,23 @@
     <div class="icvs-featured">
       <slot name="featured" />
     </div>
-    <div class="icvs-headline">
-      <div class="icvs-headline-number">
-        {{ number }}
-      </div>
-      <div class="icvs-headline-text">
-        <div class="icvs-headline-text-title">
-          {{ title }}
+    <div class="icvs-r">
+      <div class="icvs-r-headline">
+        <div class="icvs-r-headline-number">
+          {{ number }}
         </div>
-        <div class="icvs-headline-text-subtitle">
-          {{ subtitle }}
+        <div class="icvs-r-headline-text">
+          <div class="icvs-r-headline-text-title">
+            {{ title }}
+          </div>
+          <div class="icvs-r-headline-text-subtitle">
+            {{ subtitle }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="icvs-content">
-      <slot />
+      <div class="icvs-r-content">
+        <slot />
+      </div>
     </div>
   </swiper-slide>
 </template>
@@ -60,5 +62,23 @@ export default {
 <style lang="stylus" scoped>
 .icvs {
   display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .icvs-featured {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icvs-r {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
