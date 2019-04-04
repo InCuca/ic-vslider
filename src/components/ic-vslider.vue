@@ -10,8 +10,8 @@
     </div>
     <slot />
     <div class="icv-controls">
-      <div class="icv-controls-arrow icv-controls-arrow--up "></div>
-      <div class="icv-controls-arrow icv-controls-arrow--down "></div>
+      <i class="icv-controls-arrow icv-controls-arrow--up "></i>
+      <i class="icv-controls-arrow icv-controls-arrow--down "></i>
     </div>
   </div>
 </template>
@@ -75,5 +75,30 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.icv-controls-arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
 
+  &--right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  &--left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  &--up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+
+  &--down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+}
 </style>
