@@ -3,7 +3,9 @@
     <h1>ic-vslider demo</h1>
     <ic-vslider>
       <template #legend="{number}">
-        <div class="icv-legend-number">{{number}}</div>
+        <div class="icv-legend-number">
+          {{ number }}
+        </div>
         <div class="icv-legend-text">
           Programas <br>
           Benefícios

@@ -1,8 +1,13 @@
 <template>
   <div class="icv">
     <div class="icv-legend">
-      <slot name="legend" :number="totalSlides">
-        <div class="icv-legend-number">{{totalSlides}}</div>
+      <slot
+        name="legend"
+        :number="totalSlides"
+      >
+        <div class="icv-legend-number">
+          {{ totalSlides }}
+        </div>
         <div class="icv-legend-text">
           Total
         </div>
@@ -10,14 +15,13 @@
     </div>
     <slot />
     <div class="icv-controls">
-      <i class="icv-controls-arrow icv-controls-arrow--up"></i>
-      <i class="icv-controls-arrow icv-controls-arrow--down"></i>
+      <i class="icv-controls-arrow icv-controls-arrow--up" />
+      <i class="icv-controls-arrow icv-controls-arrow--down" />
     </div>
   </div>
 </template>
 
 <script>
-import IcVsliderSlide from './ic-vslider-slide';
 import bus from '../bus';
 import colors from '../mixins/colors';
 
@@ -25,27 +29,40 @@ export default {
   name: 'IcVslider',
   mixins: [colors],
   data: () => ({
-    slides: {}
+    slides: {},
   }),
   computed: {
     visibleSlide() {
       return Object.values(this.slides)
-        .find(slide => slide.visible)
+        .find(slide => slide.visible);
     },
     totalSlides() {
-      return Object.keys(this.slides).length
-    }
+      return Object.keys(this.slides).length;
+    },
+  },
+  created() {
+    bus.$on('icvs-mounted', (icvs) => {
+      const slideNumber = this.totalSlides + 1;
+      icvs.setNumber(this.getNumberPad(slideNumber));
+      this.slides = {
+        ...this.slides,
+        [icvs.number]: icvs,
+      };
+    });
+  },
+  updated() {
+    this.restartSlider();
   },
   methods: {
     nextSlide() {
       const numbers = Object.keys(this.slides);
       if (numbers.length < 1) return;
 
-      const visibleSlide = this.visibleSlide;
+      const { visibleSlide } = this;
       let curIdx = 0;
       if (visibleSlide) {
         curIdx = numbers.findIndex(visibleSlide.number) + 1;
-        visibleSlide.setVisible(false)
+        visibleSlide.setVisible(false);
       }
 
       const nextSlideNumber = numbers[curIdx];
@@ -56,22 +73,9 @@ export default {
       this.nextSlide();
     },
     getNumberPad(number) {
-      return String(number).padStart(2, '0')
-    }
+      return String(number).padStart(2, '0');
+    },
   },
-  created() {
-    bus.$on('icvs-mounted', (icvs) => {
-      const slideNumber = this.totalSlides + 1;
-      icvs.setNumber(this.getNumberPad(slideNumber));
-      this.slides = {
-        ...this.slides,
-        [icvs.number]: icvs
-      };
-    });
-  },
-  updated() {
-    this.restartSlider();
-  }
 };
 </script>
 
