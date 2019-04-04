@@ -13,7 +13,9 @@
         </div>
       </slot>
     </div>
-    <slot />
+    <swiper :options="swiperOptions" ref="swiperCmp">
+      <slot />
+    </swiper>
     <div
       class="icv-controls"
       @mouseleave="hoveredCtrl = null"
@@ -34,11 +36,14 @@
 </template>
 
 <script>
+import 'swiper/dist/css/swiper.css'
+import { swiper } from 'vue-awesome-swiper'
 import bus from '../bus';
 import colors from '../mixins/colors';
 
 export default {
   name: 'IcVslider',
+  components: {swiper, swiperSlide},
   mixins: [colors],
   data: () => ({
     slides: {},
@@ -53,6 +58,14 @@ export default {
     }
   },
   computed: {
+    swiper(){
+      return this.$refs.swiperCmp.swiper;
+    },
+    swiperOptions() {
+      return {
+
+      }
+    },
     visibleSlide() {
       return Object.values(this.slides)
         .find(slide => slide.visible);
@@ -77,39 +90,6 @@ export default {
         [icvs.number]: icvs,
       };
     });
-  },
-  methods: {
-    prevSlide() {
-
-    },
-    nextSlide() {
-      const numbers = Object.keys(this.slides);
-      if (numbers.length < 1) return;
-
-      const { visibleSlide } = this;
-      let curIdx = 0;
-      if (visibleSlide) {
-        curIdx = numbers.findIndex(n => n === visibleSlide.number) + 1;
-        visibleSlide.setVisible(false);
-      }
-
-      const nextSlideNumber = numbers[curIdx];
-      const nextSlide = this.slides[nextSlideNumber];
-      nextSlide.setVisible(true);
-    },
-    restartSlider() {
-      this.nextSlide();
-    },
-    getNumberPad(number) {
-      return String(number).padStart(2, '0');
-    },
-    onControlClick() {
-      if (this.hoveredCtrl === 'down') {
-        this.nextSlide();
-      } else {
-        this.prevSlide();
-      }
-    }
   },
 };
 </script>

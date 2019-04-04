@@ -1,31 +1,31 @@
 <template>
-  <div class="icvs">
-    <template v-if="visible">
-      <div class="icvs-headline">
-        <div class="icvs-headline-number">
-          {{ number }}
+  <swiper-slide class="icvs">
+    <div class="icvs-headline">
+      <div class="icvs-headline-number">
+        {{ number }}
+      </div>
+      <div class="icvs-headline-text">
+        <div class="icvs-headline-text-title">
+          {{ title }}
         </div>
-        <div class="icvs-headline-text">
-          <div class="icvs-headline-text-title">
-            {{ title }}
-          </div>
-          <div class="icvs-headline-text-subtitle">
-            {{ subtitle }}
-          </div>
+        <div class="icvs-headline-text-subtitle">
+          {{ subtitle }}
         </div>
       </div>
-      <div class="icvs-content">
-        <slot />
-      </div>
-    </template>
-  </div>
+    </div>
+    <div class="icvs-content">
+      <slot />
+    </div>
+  </swiper-slide>
 </template>
 
 <script>
+import {swiperSlide} from 'vue-awesome-swiper';
 import bus from '../bus';
 
 export default {
   name: 'IcVsliderSlide',
+  components: { swiperSlide },
   props: {
     title: {
       type: String,
