@@ -5,14 +5,14 @@
     </div>
     <div class="icvs-r">
       <div class="icvs-r-headline">
-        <div class="icvs-r-headline-number">
+        <div class="icvs-r-headline-number" :style="headlineNumberStyle">
           {{ number }}
         </div>
         <div class="icvs-r-headline-text">
-          <div class="icvs-r-headline-text-title">
+          <div class="icvs-r-headline-text-title" :style="headlineTitleStyle">
             {{ title }}
           </div>
-          <div class="icvs-r-headline-text-subtitle">
+          <div class="icvs-r-headline-text-subtitle" :style="headlineSubtitleStyle">
             {{ subtitle }}
           </div>
         </div>
@@ -27,10 +27,12 @@
 <script>
 import { swiperSlide } from 'vue-awesome-swiper';
 import bus from '../bus';
+import colors from '../mixins/colors';
 
 export default {
   name: 'IcVsliderSlide',
   components: { swiperSlide },
+  mixins: [colors],
   props: {
     title: {
       type: String,
@@ -45,6 +47,17 @@ export default {
     number: '',
     visible: false,
   }),
+  computed: {
+    headlineNumberStyle() {
+      return {color: this.colors.accent}
+    },
+    headlineTitleStyle() {
+      return {color: this.colors.primary}
+    },
+    headlineSubtitleStyle() {
+      return {color: this.colors.accent}
+    }
+  },
   mounted() {
     bus.$emit('icvs-mounted', this);
   },
@@ -89,9 +102,40 @@ export default {
     flex-direction: column;
 
     @media screen and (min-width: 768px) {
+      justify-content: center;
       max-width: calc(60% - 100px);
       margin-left: 100px;
       margin-right: 0;
+    }
+
+    .icvs-r-headline {
+      display: flex;
+      text-transform: uppercase;
+
+      &-number {
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-left: 1em;
+
+        &-title {
+          font-size: 1.5em;
+        }
+
+        &-subtitle {
+          font-size: .75em;
+        }
+      }
+    }
+
+    .icvs-r-content {
+      margin: 1em 0;
     }
   }
 }

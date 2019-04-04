@@ -61,10 +61,11 @@
 
   h1 {
     font-size: 28px;
-    font-family: Exo2;
   }
 
-  .icv-legend-number {
+  h1,
+  .icv-legend-number,
+  .icvs-r-headline {
     font-family: Exo2;
   }
 
