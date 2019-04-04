@@ -141,7 +141,6 @@ export default {
 .icv {
   position: relative;
   padding-right: 60px;
-  padding-bottom: 8em;
 }
 
 .icv-legend {
