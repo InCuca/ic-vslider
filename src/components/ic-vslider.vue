@@ -79,7 +79,7 @@ export default {
   watch: {
     slides: {
       handler() {
-        this.restartSlider();
+        // this.restartSlider();
       },
       immediate: true,
     },
