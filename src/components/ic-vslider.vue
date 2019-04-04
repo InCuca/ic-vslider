@@ -49,6 +49,12 @@ export default {
   name: 'IcVslider',
   components: { swiper },
   mixins: [colors],
+  props: {
+    options: {
+      type: Object,
+      default: {}
+    }
+  },
   data: () => ({
     slides: {},
     hoveredCtrl: null,
@@ -60,6 +66,8 @@ export default {
     swiperOptions() {
       return {
         direction: 'vertical',
+        autoHeight: true,
+        ...this.options,
       };
     },
     visibleSlide() {
