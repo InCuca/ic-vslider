@@ -58,7 +58,7 @@ export default {
     },
     swiperOptions() {
       return {
-
+        direction: 'vertical',
       };
     },
     visibleSlide() {
