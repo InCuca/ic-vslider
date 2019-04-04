@@ -60,16 +60,18 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2|Roboto');
 
 #app {
-  font-family: Exo2;
+  font-family: Roboto;
   font-size: 16px;
   font-weight: 300;
 
-  h2 {
-    font-size: 18px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
+  h1 {
+    font-size: 28px;
     font-family: Exo2;
+  }
+
+  .icv-legend-number {
+    font-family: Exo2;
+    font-weight: bold;
   }
 }
 </style>

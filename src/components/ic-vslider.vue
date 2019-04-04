@@ -1,11 +1,11 @@
 <template>
-  <div class="icv">
+  <div class="icv" :style="icvStyle">
     <div class="icv-legend">
       <slot
         name="legend"
         :number="totalSlides"
       >
-        <div class="icv-legend-number">
+        <div class="icv-legend-number" :style="legendNumberStyle">
           {{ totalSlides }}
         </div>
         <div class="icv-legend-text">
@@ -52,7 +52,7 @@ export default {
   props: {
     options: {
       type: Object,
-      default: {}
+      default: () => ({})
     }
   },
   data: () => ({
@@ -77,12 +77,21 @@ export default {
     totalSlides() {
       return Object.keys(this.slides).length;
     },
+    icvStyle() {
+      return {color: this.colors.text};
+    },
     controlStyle() {
       return dir => ({
         borderColor: this.hoveredCtrl === dir
           ? this.colors.accent
           : this.colors.primary,
       });
+    },
+    legendNumberStyle() {
+      return {
+        color: this.colors.primary,
+        borderColor: this.colors.accent,
+      };
     },
   },
   watch: {
@@ -134,8 +143,13 @@ export default {
   align-items: flex-end;
   line-height: 1em;
 
+  .icv-legend-number {
+    font-size: 3.75em;
+  }
+
   .icv-legend-text {
-    transform: rotate(-90deg) translate(-2em);
+    font-size: .625em;
+    transform: rotate(-90deg) translateX(-4.5em) translateY(1em);
     transform-origin: top left;
   }
 }
