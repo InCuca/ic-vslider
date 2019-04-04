@@ -4,20 +4,22 @@
     :style="icvStyle"
   >
     <div class="icv-legend">
-      <slot
-        name="legend"
-        :number="totalSlides"
+      <div
+        class="icv-legend-number"
+        :style="legendNumberStyle"
       >
-        <div
-          class="icv-legend-number"
-          :style="legendNumberStyle"
+        <slot
+          name="legend-number"
+          :number="totalSlides"
         >
           {{ totalSlides }}
-        </div>
-        <div class="icv-legend-text">
+        </slot>
+      </div>
+      <div class="icv-legend-text">
+        <slot name="legend-text">
           Total
-        </div>
-      </slot>
+        </slot>
+      </div>
     </div>
     <swiper
       ref="swiperCmp"
