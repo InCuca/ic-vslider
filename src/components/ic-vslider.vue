@@ -85,14 +85,14 @@ export default {
     },
   },
   created() {
-    bus.$on('icvs-mounted', (icvs) => {
-      const slideNumber = this.totalSlides + 1;
-      icvs.setNumber(this.getNumberPad(slideNumber));
-      this.slides = {
-        ...this.slides,
-        [icvs.number]: icvs,
-      };
-    });
+    // bus.$on('icvs-mounted', (icvs) => {
+    //   const slideNumber = this.totalSlides + 1;
+    //   icvs.setNumber(this.getNumberPad(slideNumber));
+    //   this.slides = {
+    //     ...this.slides,
+    //     [icvs.number]: icvs,
+    //   };
+    // });
   },
   methods: {
     onControlClick() {
