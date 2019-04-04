@@ -5,14 +5,23 @@
     </div>
     <div class="icvs-r">
       <div class="icvs-r-headline">
-        <div class="icvs-r-headline-number" :style="headlineNumberStyle">
+        <div
+          class="icvs-r-headline-number"
+          :style="headlineNumberStyle"
+        >
           {{ number }}
         </div>
         <div class="icvs-r-headline-text">
-          <div class="icvs-r-headline-text-title" :style="headlineTitleStyle">
+          <div
+            class="icvs-r-headline-text-title"
+            :style="headlineTitleStyle"
+          >
             {{ title }}
           </div>
-          <div class="icvs-r-headline-text-subtitle" :style="headlineSubtitleStyle">
+          <div
+            class="icvs-r-headline-text-subtitle"
+            :style="headlineSubtitleStyle"
+          >
             {{ subtitle }}
           </div>
         </div>
@@ -49,14 +58,14 @@ export default {
   }),
   computed: {
     headlineNumberStyle() {
-      return {color: this.colors.accent}
+      return { color: this.colors.accent };
     },
     headlineTitleStyle() {
-      return {color: this.colors.primary}
+      return { color: this.colors.primary };
     },
     headlineSubtitleStyle() {
-      return {color: this.colors.accent}
-    }
+      return { color: this.colors.accent };
+    },
   },
   mounted() {
     bus.$emit('icvs-mounted', this);
