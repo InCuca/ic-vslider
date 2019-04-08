@@ -6,15 +6,15 @@ Demo and docs: [https://incuca.github.io/ic-vslider/](https://incuca.github.io/i
 
 ### Direct Download / CDN
 
-[https://unpkg.com/ic-vslider/dist/ic-vslider](https://unpkg.com/ic-vslider/dist/ic-vslider)
+[https://unpkg.com/ic-vslider](https://unpkg.com/ic-vslider)
 
-[unpkg.com](https://unpkg.com) provides NPM-based CDN links. The above link will always point to the latest release on NPM. You can also use a specific version/tag via URLs like https://unpkg.com/ic-vslider/dist/ic-vslider.js
+[unpkg.com](https://unpkg.com) provides NPM-based CDN links. The above link will always point to the latest release on NPM. You can also use a specific version/tag via https://unpkg.com/ic-vslider@TAG
  
 Include ic-vslider after Vue and it will install itself automatically:
 
 ```html
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/ic-vslider/dist/ic-vslider.js"></script>
+<script src="https://unpkg.com/ic-vslider"></script>
 ```
 
 ### NPM
