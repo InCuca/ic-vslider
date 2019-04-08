@@ -10,7 +10,7 @@
     "docs:build": "npm run docs:jsdoc && vue-cli-service docs --mode build",
     "docs:serve": "npm run docs:jsdoc && vue-cli-service docs --mode serve",
     "deploy": "npm run docs:build && ./deploy.sh",
-    "prepublish": "npm run deploy && vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
+    "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
     "start": "vue-cli-service serve",
     "test": "npm run test:unit",
     "test:unit": "vue-cli-service test:unit"
