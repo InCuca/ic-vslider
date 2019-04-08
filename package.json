@@ -1,6 +1,8 @@
 {
   "name": "ic-vslider",
   "version": "0.1.0",
+  "license": "MIT",
+  "author": "InCuca",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
