@@ -34,12 +34,9 @@
 </template>
 
 <script>
-// FIXME: Waiting kazupon/vue-cli-plugin-p11n#21
-// import { swiperSlide } from 'vue-awesome-swiper';
+import { swiperSlide } from 'vue-awesome-swiper';
 import bus from '../bus';
 import colors from '../mixins/colors';
-
-const { swiperSlide } = require('vue-awesome-swiper');
 
 export default {
   name: 'IcVsliderSlide',
