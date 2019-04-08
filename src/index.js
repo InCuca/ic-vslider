@@ -1,5 +1,5 @@
-import IcVsliderSlide from './components/ic-vslider-slide';
-import IcVslider from './components/ic-vslider';
+import IcVsliderSlide from './components/ic-vslider-slide.vue';
+import IcVslider from './components/ic-vslider.vue';
 
 
 const version = '__VERSION__';
