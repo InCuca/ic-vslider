@@ -50,10 +50,14 @@
 </template>
 
 <script>
-import 'swiper/dist/css/swiper.css';
-import { swiper } from 'vue-awesome-swiper';
+// FIXME: Waiting kazupon/vue-cli-plugin-p11n#21
+// import 'swiper/dist/css/swiper.css';
+// import { swiper } from 'vue-awesome-swiper';
 import bus from '../bus';
 import colors from '../mixins/colors';
+
+require('swiper/dist/css/swiper.css');
+const { swiper } = require('vue-awesome-swiper');
 
 export default {
   name: 'IcVslider',
