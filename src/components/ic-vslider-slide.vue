@@ -34,9 +34,11 @@
 </template>
 
 <script>
-import { swiperSlide } from 'vue-awesome-swiper';
+import vSwiper from 'vue-awesome-swiper';
 import bus from '../bus';
 import colors from '../mixins/colors';
+
+const { swiperSlide } = vSwiper;
 
 export default {
   name: 'IcVsliderSlide',

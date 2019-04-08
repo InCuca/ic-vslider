@@ -50,10 +50,13 @@
 </template>
 
 <script>
-import 'swiper/dist/css/swiper.css';
-import { swiper } from 'vue-awesome-swiper';
+// FIXME: cannot import external css kazupon/vue-cli-plugin-p11n#21
+// import 'swiper/dist/css/swiper.css';
+import vSwiper from 'vue-awesome-swiper';
 import bus from '../bus';
 import colors from '../mixins/colors';
+
+const { swiper } = vSwiper;
 
 export default {
   name: 'IcVslider',
@@ -139,6 +142,12 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus">
+// FIXME: remove this when swiper loads by dep
+@import '../assets/swiper.css';
+</style>
+
 
 <style lang="stylus" scoped>
 .icv {
