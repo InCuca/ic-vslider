@@ -143,9 +143,9 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-// FIXME: remove this when swiper loads by dep
-@import '../assets/swiper.css';
+<style>
+/* FIXME: remove this when swiper loads by dep */
+@import url('../assets/swiper.min.css');
 </style>
 
 
