@@ -41,17 +41,6 @@ import padNumber from '../mixins/padNumber';
 
 const { swiperSlide } = vSwiper;
 
-let sliders = 0;
-const data = () => {
-  const number = sliders + 1;
-  sliders += 1;
-
-  return {
-    number,
-    visible: false,
-  };
-};
-
 export default {
   name: 'IcVsliderSlide',
   components: { swiperSlide },
@@ -64,9 +53,11 @@ export default {
     subtitle: {
       type: String,
       default: '',
-    },
+    }
   },
-  data,
+  data: () => ({
+    number: 0
+  }),
   computed: {
     headlineNumberStyle() {
       return { color: this.colors.accent };
@@ -80,11 +71,6 @@ export default {
   },
   mounted() {
     bus.$emit('icvs-mounted', this);
-  },
-  methods: {
-    setVisible(visible) {
-      this.visible = visible;
-    },
   },
 };
 </script>

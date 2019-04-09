@@ -72,6 +72,7 @@ export default {
   data: () => ({
     slides: {},
     hoveredCtrl: null,
+    childListener: null,
   }),
   computed: {
     swiper() {
@@ -122,10 +123,15 @@ export default {
   },
   created() {
     bus.$on('icvs-mounted', (icvs) => {
-      this.slides = {
-        ...this.slides,
-        [icvs.number]: icvs,
-      };
+      if (this.hasChild(icvs) && icvs.number < 1) {
+        const slides = Object.keys(this.slides).length;
+        // add a new slide key
+        this.slides = {
+          ...this.slides,
+          [slides + 1]: icvs,
+        };
+        icvs.number = slides + 1;
+      }
     });
   },
   methods: {
@@ -136,6 +142,10 @@ export default {
         this.swiper.slidePrev();
       }
     },
+    hasChild(child) {
+      const children = this.$refs.swiperCmp.$children;
+      return children.includes(child);
+    }
   },
 };
 </script>
