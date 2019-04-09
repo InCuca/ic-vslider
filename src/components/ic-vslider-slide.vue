@@ -151,6 +151,7 @@ export default {
         }
 
         &-subtitle {
+          min-height: 2.45em;
           font-size: .75em;
         }
       }
