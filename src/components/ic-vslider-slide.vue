@@ -9,7 +9,7 @@
           class="icvs-r-headline-number"
           :style="headlineNumberStyle"
         >
-          {{ number }}
+          {{ padNumber(number) }}
         </div>
         <div class="icvs-r-headline-text">
           <div
@@ -37,13 +37,25 @@
 import vSwiper from 'vue-awesome-swiper';
 import bus from '../bus';
 import colors from '../mixins/colors';
+import padNumber from '../mixins/padNumber';
 
 const { swiperSlide } = vSwiper;
+
+let sliders = 0;
+const data = () => {
+  const number = sliders + 1;
+  sliders += 1;
+
+  return {
+    number,
+    visible: false,
+  };
+};
 
 export default {
   name: 'IcVsliderSlide',
   components: { swiperSlide },
-  mixins: [colors],
+  mixins: [colors, padNumber],
   props: {
     title: {
       type: String,
@@ -54,10 +66,7 @@ export default {
       default: '',
     },
   },
-  data: () => ({
-    number: '',
-    visible: false,
-  }),
+  data,
   computed: {
     headlineNumberStyle() {
       return { color: this.colors.accent };
@@ -73,9 +82,6 @@ export default {
     bus.$emit('icvs-mounted', this);
   },
   methods: {
-    setNumber(number) {
-      this.number = number;
-    },
     setVisible(visible) {
       this.visible = visible;
     },

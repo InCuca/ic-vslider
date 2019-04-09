@@ -35,9 +35,9 @@
       >
         <slot
           name="legend-number"
-          :number="getNumberPad(totalSlides)"
+          :number="padNumber(totalSlides)"
         >
-          {{ getNumberPad(totalSlides) }}
+          {{ padNumber(totalSlides) }}
         </slot>
       </div>
       <div class="icv-legend-text">
@@ -55,13 +55,14 @@
 import vSwiper from 'vue-awesome-swiper';
 import bus from '../bus';
 import colors from '../mixins/colors';
+import padNumber from '../mixins/padNumber';
 
 const { swiper } = vSwiper;
 
 export default {
   name: 'IcVslider',
   components: { swiper },
-  mixins: [colors],
+  mixins: [colors, padNumber],
   props: {
     options: {
       type: Object,
@@ -89,7 +90,8 @@ export default {
         .find(slide => slide.visible);
     },
     totalSlides() {
-      return Object.keys(this.slides).length;
+      const total = Object.keys(this.slides).length;
+      return this.padNumber(total);
     },
     icvStyle() {
       return { color: this.colors.text };
@@ -118,10 +120,8 @@ export default {
       immediate: true,
     },
   },
-  mounted() {
+  created() {
     bus.$on('icvs-mounted', (icvs) => {
-      const slideNumber = this.totalSlides + 1;
-      icvs.setNumber(this.getNumberPad(slideNumber));
       this.slides = {
         ...this.slides,
         [icvs.number]: icvs,
@@ -129,9 +129,6 @@ export default {
     });
   },
   methods: {
-    getNumberPad(number) {
-      return String(number).padStart(2, '0');
-    },
     onControlClick() {
       if (this.hoveredCtrl === 'down') {
         this.swiper.slideNext();
