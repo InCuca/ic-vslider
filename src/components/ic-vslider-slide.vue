@@ -101,7 +101,7 @@ export default {
     align-items: center;
 
     @media screen and (min-width: 768px) {
-      max-width: 40%;
+      width: 40%;
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
@@ -114,7 +114,7 @@ export default {
 
     @media screen and (min-width: 768px) {
       justify-content: center;
-      max-width: calc(60% - 100px);
+      width: calc(60% - 100px);
       margin-left: 100px;
       margin-right: 0;
     }
