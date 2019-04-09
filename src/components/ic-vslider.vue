@@ -145,7 +145,7 @@ export default {
     hasChild(child) {
       const children = this.$refs.swiperCmp.$children;
       return children.includes(child);
-    }
+    },
   },
 };
 </script>

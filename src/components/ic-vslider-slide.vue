@@ -53,10 +53,10 @@ export default {
     subtitle: {
       type: String,
       default: '',
-    }
+    },
   },
   data: () => ({
-    number: 0
+    number: 0,
   }),
   computed: {
     headlineNumberStyle() {
