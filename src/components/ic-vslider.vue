@@ -35,9 +35,9 @@
       >
         <slot
           name="legend-number"
-          :number="padNumber(totalSlides)"
+          :number="totalSlides"
         >
-          {{ padNumber(totalSlides) }}
+          {{ totalSlides }}
         </slot>
       </div>
       <div class="icv-legend-text">
