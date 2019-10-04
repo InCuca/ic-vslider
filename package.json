@@ -106,5 +106,10 @@
     "testURL": "http://localhost/"
   },
   "jsdelivr": "dist/ic-vslider.umd.min.js",
-  "sideeffects": false
+  "sideeffects": false,
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  }
 }
