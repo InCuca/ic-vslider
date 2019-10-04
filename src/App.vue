@@ -48,23 +48,20 @@
 </template>
 
 
-<style lang="stylus">
-@import url('https://fonts.googleapis.com/css?family=Exo+2|Roboto');
-
+<style lang="css">
+@import url("https://fonts.googleapis.com/css?family=Exo+2|Roboto");
 #app {
   margin: 0 auto;
   max-width: 1000px;
   font-family: Roboto;
   font-size: 16px;
   font-weight: 300;
-
-  .icv-legend-number,
-  .icvs-r-headline {
-    font-family: Exo2;
-  }
-
-  .icv-legend-text {
-    color: #cccccc;
-  }
+}
+#app .icv-legend-number,
+#app .icvs-r-headline {
+  font-family: Exo2;
+}
+#app .icv-legend-text {
+  color: #ccc;
 }
 </style>

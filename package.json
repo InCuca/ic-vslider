@@ -106,5 +106,12 @@
     "testURL": "http://localhost/"
   },
   "jsdelivr": "dist/ic-vslider.umd.min.js",
-  "sideeffects": false
+  "sideeffects": false,
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/bundlers/vue@2.6.15"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  }
 }

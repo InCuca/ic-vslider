@@ -156,15 +156,13 @@ export default {
 </style>
 
 
-<style lang="stylus" scoped>
+<style lang="css" scoped>
 .icv {
   position: relative;
-
-  .icv-c {
-    padding-right: 60px;
-  }
 }
-
+.icv .icv-c {
+  padding-right: 60px;
+}
 .icv-legend {
   display: none;
   position: absolute;
@@ -173,74 +171,62 @@ export default {
   right: -60px;
   align-items: flex-end;
   line-height: 1em;
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .icv-legend {
     display: flex;
   }
-
-  .icv-legend-number {
-    font-size: 3.75em;
-    font-weight: bold;
-    border-bottom: 3px solid;
-    line-height: 1;
-  }
-
-  .icv-legend-text {
-    // position: absolute;
-    // bottom: 0;
-    // left: 100%;
-    font-size: .625em;
-    font-weight: 900;
-    letter-spacing: 3.2px;
-    transform: rotate(-90deg) translateX(-3.5em) translateY(1em);
-    transform-origin: top left;
-    text-transform: uppercase;
-  }
 }
-
+.icv-legend .icv-legend-number {
+  font-size: 3.75em;
+  font-weight: bold;
+  border-bottom: 3px solid;
+  line-height: 1;
+}
+.icv-legend .icv-legend-text {
+  font-size: 0.625em;
+  font-weight: 900;
+  letter-spacing: 3.2px;
+  transform: rotate(-90deg) translateX(-3.5em) translateY(1em);
+  transform-origin: top left;
+  text-transform: uppercase;
+}
 .icv-controls {
   position: absolute;
   top: calc(50% - 60px);
   right: 0;
   bottom: 0;
   z-index: 1;
-
-  .icv-controls-ctrl {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-
-    .icv-controls-ctrl-arrow {
-      border-color: inherit;
-      border-style: solid;
-      border-width: 0 3px 3px 0;
-      display: block;
-      padding: 3px;
-    }
-
-    &--right .icv-controls-ctrl-arrow {
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-    }
-
-    &--left .icv-controls-ctrl-arrow {
-      transform: rotate(135deg);
-      -webkit-transform: rotate(135deg);
-    }
-
-    &--up .icv-controls-ctrl-arrow {
-      transform: rotate(-135deg);
-      -webkit-transform: rotate(-135deg);
-    }
-
-    &--down .icv-controls-ctrl-arrow {
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-    }
-  }
 }
-
+.icv-controls .icv-controls-ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.icv-controls .icv-controls-ctrl .icv-controls-ctrl-arrow {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  display: block;
+  padding: 3px;
+}
+.icv-controls .icv-controls-ctrl--right .icv-controls-ctrl-arrow {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.icv-controls .icv-controls-ctrl--left .icv-controls-ctrl-arrow {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.icv-controls .icv-controls-ctrl--up .icv-controls-ctrl-arrow {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.icv-controls .icv-controls-ctrl--down .icv-controls-ctrl-arrow {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 </style>
