@@ -53,7 +53,6 @@
 // FIXME: cannot import external css kazupon/vue-cli-plugin-p11n#21
 // import 'swiper/dist/css/swiper.css';
 import vSwiper from 'vue-awesome-swiper';
-import bus from '../bus';
 import colors from '../mixins/colors';
 import padNumber from '../mixins/padNumber';
 
@@ -122,7 +121,7 @@ export default {
     },
   },
   created() {
-    bus.$on('icvs-mounted', (icvs) => {
+    this.$on('icvs-mounted', (icvs) => {
       if (this.hasChild(icvs) && icvs.number < 1) {
         const slides = Object.keys(this.slides).length;
         // add a new slide key

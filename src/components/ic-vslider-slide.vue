@@ -35,7 +35,6 @@
 
 <script>
 import vSwiper from 'vue-awesome-swiper';
-import bus from '../bus';
 import colors from '../mixins/colors';
 import padNumber from '../mixins/padNumber';
 
@@ -70,7 +69,10 @@ export default {
     },
   },
   mounted() {
-    bus.$emit('icvs-mounted', this);
+    // FIXME: Find a safer way
+    // I was using bus, but itwas broken while using
+    // many instances, because of global scope
+    this.$parent.$parent.$emit('icvs-mounted', this);
   },
 };
 </script>

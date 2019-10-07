@@ -30,7 +30,6 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "swiper": "^4.5.0",
-    "vue": "^2.6.6",
     "vue-awesome-swiper": "^3.1.3"
   },
   "devDependencies": {
@@ -45,6 +44,7 @@
     "babel-jest": "^23.6.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "vue": "^2.6.10",
     "vue-cli-plugin-p11n": "^0.2.1",
     "vue-template-compiler": "^2.5.21",
     "vuepress-jsdoc": "^1.7.0"
